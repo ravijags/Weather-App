@@ -3,7 +3,7 @@ from tkinter import ttk
 import requests
 def data_get():
     city=city_name.get()
-    data=requests.get("https://api.openweathermap.org/data/2.5/weather?q="+city+"&appid=fe7d7c237769e4a48b5dea1f8995957f").json()
+    data=requests.get("https://api.openweathermap.org/data/2.5/weather?q="+city+"&appid=").json()
     w_label1.config(text=data['weather'][0]['main'])
     wb_label1.config(text=data['weather'][0]['description'])
     temp_label1.config(text=int(data['main']['temp'] - 273.15))  # Convert Kelvin to Celsius
